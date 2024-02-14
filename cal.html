@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+<link rel="stylesheet" href="cal.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;font-size: 3em;color: white;">Simple Calculator</h1>
+        <input type="text" placeholder="Enter digits here" id="display" >
+        <div class="row">
+            <button type="button" onclick="addToDisplay('7')">7</button>
+            <button type="button" onclick="addToDisplay('8')">8</button>
+            <button type="button" onclick="addToDisplay('9')">9</button>
+            <button type="button" class="operator" onclick="addToDisplay('+')">+</button><br>
+        </div>
+        <div class="row">
+            <button type="button" onclick="addToDisplay('4')">4</button>
+            <button type="button" onclick="addToDisplay('5')">5</button>
+            <button type="button" onclick="addToDisplay('6')">6</button>
+            <button type="button" class="operator" onclick="addToDisplay('-')">-</button><br>
+        </div>
+        <div class="row">
+            <button type="button" onclick="addToDisplay('1')">1</button>
+            <button type="button" onclick="addToDisplay('2')">2</button>
+            <button type="button" onclick="addToDisplay('3')">3</button>
+            <button type="button" class="operator" onclick="addToDisplay('*')">*</button><br>
+        </div>
+        <div class="row">
+            <button type="button" style="border-bottom-left-radius: 20px;" onclick="addToDisplay('0')">0</button>
+            <button type="button" class="func" onclick="calculate()">=</button>
+            <button type="button" class="func" onclick="clearDisplay()">C</button>
+            <button type="button" style="border-bottom-right-radius: 20px;" class="operator" onclick="addToDisplay('/')">/</button><br>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+    <script>
+function addToDisplay(char) {
+    document.getElementById("display").value += char;
+}
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+
+
+function calculate() {
+        const result = eval(document.getElementById("display").value);
+        document.getElementById("display").value = result;
+    }
+
+
+    </script>
+</body>
+</html>
